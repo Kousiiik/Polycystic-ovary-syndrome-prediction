@@ -40,4 +40,4 @@ python request.py
 ```
 
 
-The website is available on : https://pcospredict.herokuapp.com/
+
