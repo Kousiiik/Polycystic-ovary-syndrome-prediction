@@ -3,8 +3,8 @@ Polycystic ovary syndrome is a health problem caused by an imbalance of reproduc
 My Web application has a deployed Machine learning model which helps doctors diagnose whether a person has PCOS based on the input on hormones entered with 90.79 % accuracy. The website also provides details regarding the syndrome which include all the common symptoms, causes, and how to diagnose it.
 
 ## ML-Model-Deployment
-This is a PCOS Predictive Analysis Engine deployed as WebApp on Heroku
-
+This is a PCOS Predictive Analysis Engine which can be deployed at any cloud engine 
+The code and impimentation is done by Kousik Katari
 ### Prerequisites
 You must have Scikit Learn, Pandas (for Machine Leraning Model) and Flask (for API) installed.
 
