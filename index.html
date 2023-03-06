@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 160px;
+  font-size: 14px; 
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="https://pcospredict.herokuapp.com/about">About</a>
+  <a href="https://pcospredict.herokuapp.com/">Predict</a>
+</div>
+
+<div class="main">
+<body>
+  <body style="background-color:black;">
+ <div class="login">
+	<h1 style="text-align:center; color:white;"><u>Predict PCOS</u></h1>
+	<br>
+	<h2 style="text-align:centre; color:white;"><u>Hormonal Information</u></h2>
+<table BORDER=7 CELLSPACING=2>
+  <tr>
+    <th></th>
+    <th style="text-align:center; color:white;">Hormone Name</th>
+    <th style="text-align:center; color:white;">Description</th>
+  </tr>
+  <tr>
+    <td style="text-align:center;color:white;">FSH</td>
+    <td  style=" text-align:centre;color:white;">Follicle Stimulating Hormone</td>
+    <td  style="color:white;">Women with PCOS often do not ovulate on a monthly basis due to low FSH levels(6 mlU/ml)</td>
+  </tr>
+  <tr>
+    <td  style="text-align:center; color:white;">LH</td>
+    <td  style="text-align:centre; color:white;">Luteinizing hormone</td>
+    <td  style=" color:white;">Women with PCOS often have high levels of LH secretion(18 mlU/ml).</td>
+  </tr>
+  <tr>
+    <td  style="text-align:center; color:white;">TSH</td>
+    <td  style="text-align:centre; color:white;">Thyroid Stimulating Hormone</td>
+    <td  style=" color:white;">Elevated TSH (indicating hypothyroid) in PCOS patients</td>
+  </tr>
+  <tr>
+    <td style="text-align:center; color:white;">AMH</td>
+    <td style=" color:white;">Anti Mullerian Hormone</td>
+    <td style=" color:white;">Women with PCOS often have elevated AMH levels.
+    At any age, a score over 48 pmol/L is considered high and could be a sign of PCOS.</td>
+  </tr>
+  <tr>
+    <td style="text-align:center; color:white;">PRL</td>
+    <td style="color:white;">Prolactin level</td>
+    <td style="color:white;">Patients with PCOS can have mildly elevated prolactin levels</td>
+  </tr>
+  <tr>
+    <td style="text-align:center; color:white;">Vit D3</td>
+    <td style="color:white;">Vitamin D3</td>
+    <td style="color:white;">The prevalence of vitamin D deficiency in women with PCOS is about 67-85%</td>
+  </tr>
+  <tr>
+    <td style="text-align:center; color:white;">PRG</td>
+    <td style="color:white;">Progestrone Level</td>
+    <td style="color:white;">Women with polycystic ovary syndrome (PCOS) need higher levels of progesterone to slow the
+     frequency of GnRH pulse secretion, resulting in insufficient plasma FSH synthesis and persistent plasma LH stimulation
+      of ovarian androgens.</td>
+  </tr>
+  <tr>
+    <td style="text-align:center; color:white;">RBS</td>
+    <td style="color:white;">Random Blood Sugar</td>
+    <td style="color:white;"> As many as 30% to 40% of women who have PCOS also have insulin resistance a condition
+     that leads to high glucose levels and the potential for pre-diabetes and type 2 diabetes.</td>
+  </tr>
+</table>
+<br>
+<h4 style="color:white;"><u>NOTE</u></h4>
+<ul>
+<li style="color:white;">Systolic blood pressure</li>
+<p style="color:white;">Is the pressure when the heart beats – while the heart muscle is contracting (squeezing) and pumping oxygen-rich blood into the blood vessels.</p>
+<li style="color:white;">Diastolic blood pressure</li>
+<p style="color:white;">Is the pressure on the blood vessels when the heart muscle relaxes. The diastolic pressure is always lower than the systolic pressure.</p>
+<li style="color:white;">Follicle Count(both Left and Right)</li>
+<p style="color:white;">In polycystic ovary syndrome, abnormal hormone levels prevent follicles from growing and maturing to release egg cells. Instead, these immature follicles accumulate in the ovaries. Affected women can have 12 or more of these follicles. The number of these follicles usually decreases with age.</p>
+</ul>
+<br><br>
+<p style="color:white;">Note: For questions where you need to answer Yes or No, input 1 as Yes and 0 as No. Use metric system to input the data</p>
+	 <br>
+	 
+<h4 style="color:white;">Predicting PCOS</h4>
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="Age" placeholder="Whats your Age?" required="required" />
+        <input type="text" name="Weight" placeholder="Weight" required="required" />
+        <input type="text" name="Height" placeholder="Height" required="required" />
+		<input type="text" name="BMI" placeholder="BMI" required="required"/>
+		<input type="text" name="PulseRate" placeholder="PulseRate" required="required" />
+		<input type="text" name="Cycle(R/I)" placeholder="Irregular Periods?" required="required" />
+		<input type="text" name="RR" placeholder="Respiration Rate" required="required" />
+		<input type="text" name="Pregnant" placeholder="Ever been pregnant?" required="required" />
+		<input type="text" name="No. of Abortions" placeholder="No. of Abortions" required="required" />
+		<input type="text" name="FSH" placeholder="FSH Level?" required="required" />
+		<input type="text" name="LH" placeholder="LH Level?" required="required" />
+		<input type="text" name="FSH_LH_ratio'" placeholder="FHS:LH ratio" required="required" />
+		<input type="text" name="W_H_ratio" placeholder="Waist:Hip Ratio" required="required" />
+		<input type="text" name="TSH" placeholder="TSH level?" required="required" />
+		<input type="text" name="AMH" placeholder="AMH level?" required="required" />
+		<input type="text" name="PRL" placeholder="PRL level?" required="required" />
+		<input type="text" name="VitD3" placeholder="Vitamin d3 level?" required="required" />
+		<input type="text" name="PRG" placeholder="PRG level?" required="required" />
+		<input type="text" name="RBS" placeholder="RBS level?" required="required" />
+		<input type="text" name="Weight_gain" placeholder="weight increased?" required="required" />
+		<input type="text" name="hair_growth" placeholder="abnormal Hair Growth?" required="required" />
+		<input type="text" name="Skin_darkening" placeholder="Skin Darkened?" required="required" />
+		<input type="text" name="Hair_loss" placeholder="Noticied any Hairfall?" required="required" />
+		<input type="text" name="Pimples" placeholder="Increase in Pimples?" required="required" />
+		<input type="text" name="Fast_food" placeholder="Do you consume Fast food?" required="required" />
+		<input type="text" name="Reg_exercise" placeholder="Exercise regurlarly?" required="required" />
+		<input type="text" name="BP_systolic'" placeholder="Systolic Blood Pressure" required="required" />
+		<input type="text" name="BP_diastolic" placeholder="Diastolic Blood Pressure" required="required" />
+		<input type="text" name="Follicle_count" placeholder="Count of Follicles" required="required" /><br>
+		<p></p>
+        <button type="submit" class="btn btn-primary btn-block btn-large"><b>Predict( fingers crossed )</b></button>
+    </form>
+   <br>
+   <br>
+   <p style="color:white;">{{ prediction_text }}</p>
+ </div>
+</div>
+
+</body>
+</html>
+
