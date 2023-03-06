@@ -4,7 +4,7 @@ My Web application has a deployed Machine learning model which helps doctors dia
 
 ## ML-Model-Deployment
 This is a PCOS Predictive Analysis Engine which can be deployed at any cloud engine 
-The code and impimentation is done by Kousik Katari
+The code and implementation is done by Kousik Katari
 ### Prerequisites
 You must have Scikit Learn, Pandas (for Machine Leraning Model) and Flask (for API) installed.
 
